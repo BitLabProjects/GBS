@@ -1,0 +1,7 @@
+<Core Name="Wanderer">
+  <State Name="Wander">
+    <TimeoutTrigger Seconds="5">
+      <WanderAction />
+    </TimeoutTrigger>
+  </State>
+</Core>

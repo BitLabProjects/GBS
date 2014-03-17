@@ -1,0 +1,26 @@
+<Core Name="Soldier">
+  <State Name="Idle">
+    <SightTrigger DistanceComparison="Within" Distance="100">
+      <ChangeStateToAction State="Follow" />
+    </SightTrigger>
+  </State>
+  <State Name="Follow">
+    <SightTrigger DistanceComparison="Within" Distance="30">
+      <ChangeStateToAction State="Shoot" />
+    </SightTrigger>
+    <SightTrigger DistanceComparison="FurtherThan" Distance="150">
+      <ChangeStateToAction State="Idle" />
+    </SightTrigger>
+    <AlwaysTrigger>
+      <WalkTowardsAction />
+    </AlwaysTrigger>
+  </State>
+  <State Name="Shoot">
+    <SightTrigger DistanceComparison="FurtherThan" Distance="60">
+      <ChangeStateToAction State="Follow" />
+    </SightTrigger>
+    <AlwaysTrigger>
+      <ShootAtAction />
+    </AlwaysTrigger>
+  </State>
+</Core>
