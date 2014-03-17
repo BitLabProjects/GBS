@@ -1,7 +1,6 @@
 package TriggerActions;
 
-import commonobjects.Bullet;
-import engine.Core;
+import CommonObjects.Bullet;
 import engine.World;
 import engine.Robot;
 import engine.TriggerAction;

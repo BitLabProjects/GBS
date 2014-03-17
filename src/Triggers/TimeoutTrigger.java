@@ -1,4 +1,4 @@
-package triggers;
+package Triggers;
 
 import engine.Trigger;
 import org.simpleframework.xml.*;

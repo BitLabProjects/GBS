@@ -1,8 +1,8 @@
 package engine;
 
-import triggers.AlwaysTrigger;
-import triggers.SightTrigger;
-import triggers.TimeoutTrigger;
+import Triggers.AlwaysTrigger;
+import Triggers.SightTrigger;
+import Triggers.TimeoutTrigger;
 import java.util.LinkedList;
 import org.simpleframework.xml.*;
 

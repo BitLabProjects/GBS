@@ -1,9 +1,9 @@
 package engine;
 
-import triggeractions.ShootAtAction;
-import triggeractions.WanderAction;
-import triggeractions.WalkTowardsAction;
-import triggeractions.ChangeStateToAction;
+import TriggerActions.ShootAtAction;
+import TriggerActions.WanderAction;
+import TriggerActions.WalkTowardsAction;
+import TriggerActions.ChangeStateToAction;
 import java.util.LinkedList;
 import org.simpleframework.xml.*;
 
