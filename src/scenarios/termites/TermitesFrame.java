@@ -1,9 +1,11 @@
 package scenarios.termites;
 
-import awt.Board;
 import engine.Main;
+import engine.awt.Board;
+
 import java.awt.*;
 import java.awt.event.*;
+
 import javax.swing.*;
 import javax.swing.event.*;
 

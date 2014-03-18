@@ -1,10 +1,11 @@
 package scenarios.termites;
 
-import Behaviours.*;
 import engine.*;
 import engine.WorldObject.*;
-import utils.Color;
+
 import java.util.ArrayList;
+
+import library.behaviours.*;
 
 public class TermitesScheduler extends BehaviorsScheduler {
 

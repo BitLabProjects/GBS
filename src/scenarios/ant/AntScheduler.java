@@ -1,20 +1,22 @@
 package scenarios.ant;
 
-import Behaviours.PheromoneAttractionBehaviour;
-import Behaviours.RepulsionBehaviour;
-import Behaviours.AttractionBehaviour;
-import Behaviours.RandomWalkBehaviour;
-import Behaviours.CarryItemBehaviour;
-import Behaviours.DropPheromoneBehaviour;
 import engine.BehaviorsScheduler;
+import engine.Color;
 import engine.Robot;
 import engine.Behaviour;
 import engine.Vector;
 import engine.World;
 import engine.WorldObject;
 import engine.WorldObject.*;
-import utils.Color;
+
 import java.util.ArrayList;
+
+import library.behaviours.AttractionBehaviour;
+import library.behaviours.CarryItemBehaviour;
+import library.behaviours.DropPheromoneBehaviour;
+import library.behaviours.PheromoneAttractionBehaviour;
+import library.behaviours.RandomWalkBehaviour;
+import library.behaviours.RepulsionBehaviour;
 
 public class AntScheduler extends BehaviorsScheduler {
 

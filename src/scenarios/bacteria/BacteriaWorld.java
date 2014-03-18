@@ -1,15 +1,14 @@
 package scenarios.bacteria;
 
+import engine.Color;
 import engine.World;
 import engine.WorldObject;
 import engine.Robot;
 import engine.BehaviorsScheduler;
 import engine.Vector;
-import utils.Color;
+import engine.robotpainters.BacteriaPainter;
 
 import java.util.Random;
-
-import Robotpainters.BacteriaPainter;
 
 public class BacteriaWorld extends World {
 

@@ -1,14 +1,14 @@
 package scenarios.capturetheflag;
 
-import Robotpainters.TadpolePainter;
-import awt.Board;
 import engine.Box;
+import engine.Color;
 import engine.World;
 import engine.WorldObject;
 import engine.Robot;
 import engine.BehaviorsScheduler;
 import engine.Vector;
-import utils.Color;
+import engine.awt.Board;
+import engine.robotpainters.TadpolePainter;
 
 import java.util.Random;
 

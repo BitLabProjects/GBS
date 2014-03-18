@@ -1,8 +1,9 @@
 package engine;
 
-import awt.Board;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import engine.awt.Board;
 
 public abstract class Engine implements Runnable {
 

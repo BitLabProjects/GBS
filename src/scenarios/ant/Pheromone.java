@@ -1,11 +1,10 @@
 package scenarios.ant;
 
+import engine.Color;
 import engine.RenderContext;
 import engine.World;
 import engine.WorldObject;
 import engine.Vector;
-import utils.Color;
-//import java.awt.Graphic2D;
 
 public class Pheromone extends WorldObject {
 

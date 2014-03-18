@@ -1,6 +1,5 @@
 package engine;
 
-import utils.Color;
 
 public class MovableObject extends WorldObject {
 

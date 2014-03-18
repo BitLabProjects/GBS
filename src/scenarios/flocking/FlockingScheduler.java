@@ -1,14 +1,16 @@
 package scenarios.flocking;
 
-import Behaviours.RepulsionBehaviour;
-import Behaviours.AttractionBehaviour;
-import Behaviours.RandomWalkBehaviour;
-import Behaviours.DirectionBehaviour;
 import engine.BehaviorsScheduler;
 import engine.Robot;
 import engine.Behaviour;
 import engine.WorldObject.*;
+
 import java.util.ArrayList;
+
+import library.behaviours.AttractionBehaviour;
+import library.behaviours.DirectionBehaviour;
+import library.behaviours.RandomWalkBehaviour;
+import library.behaviours.RepulsionBehaviour;
 
 public class FlockingScheduler extends BehaviorsScheduler {
 

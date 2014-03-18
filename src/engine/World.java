@@ -1,6 +1,5 @@
 package engine;
 
-import utils.Color;
 import java.util.*;
 
 public class World {

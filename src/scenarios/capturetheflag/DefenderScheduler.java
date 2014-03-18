@@ -1,18 +1,21 @@
 package scenarios.capturetheflag;
 
-import Behaviours.RepulsionBehaviour;
-import Behaviours.AttractionBehaviour;
-import Behaviours.RandomWalkBehaviour;
-import Behaviours.FollowObjectBehaviour;
 import engine.BehaviorsScheduler;
+import engine.Color;
 import engine.Robot;
 import engine.Behaviour;
 import engine.Vector;
 import engine.WorldObject.*;
-import utils.Color;
+
 import java.util.ArrayList;
 import java.util.Random;
+
 import javax.swing.JOptionPane;
+
+import library.behaviours.AttractionBehaviour;
+import library.behaviours.FollowObjectBehaviour;
+import library.behaviours.RandomWalkBehaviour;
+import library.behaviours.RepulsionBehaviour;
 
 public class DefenderScheduler extends BehaviorsScheduler {
 

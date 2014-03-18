@@ -1,13 +1,14 @@
 package scenarios.ant;
 
 import engine.Box;
+import engine.Color;
 import engine.World;
 import engine.WorldObject;
 import engine.Robot;
 import engine.BehaviorsScheduler;
 import engine.Vector;
-import Robotpainters.InsectPainter;
-import utils.Color;
+import engine.robotpainters.InsectPainter;
+
 import java.util.Random;
 
 public class AntWorld extends World {

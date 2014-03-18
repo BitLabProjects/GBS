@@ -1,15 +1,14 @@
 package scenarios.termites;
 
 import engine.BehaviorsScheduler;
+import engine.Color;
 import engine.Robot;
 import engine.Vector;
 import engine.World;
 import engine.WorldObject;
-import utils.Color;
+import engine.robotpainters.InsectPainter;
 
 import java.util.Random;
-
-import Robotpainters.InsectPainter;
 
 public class TermitesWorld extends World {
   

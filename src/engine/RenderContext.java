@@ -3,7 +3,7 @@ package engine;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.glutils.ImmediateModeRenderer20;
 import com.badlogic.gdx.math.Matrix4;
-import utils.Color;
+
 import java.util.Stack;
 
 public class RenderContext {

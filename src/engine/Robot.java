@@ -1,10 +1,10 @@
 package engine;
 
-import Robotpainters.RobotPainter;
 import scenarios.ant.Pheromone;
-import utils.Color;
 
 import java.util.*;
+
+import engine.robotpainters.RobotPainter;
 
 public class Robot extends MovableObject {
 

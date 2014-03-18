@@ -1,15 +1,14 @@
 package scenarios.tadpoles;
 
+import engine.Color;
 import engine.Core;
 import engine.CoreLoader;
 import engine.Robot;
 import engine.Vector;
 import engine.World;
-import utils.Color;
+import engine.robotpainters.TadpolePainter;
 
 import java.util.Random;
-
-import Robotpainters.TadpolePainter;
 
 public class TadpolesWorld extends World {
 
