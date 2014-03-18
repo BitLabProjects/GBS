@@ -1,13 +1,14 @@
 package main;
 
+import scenarios.ant.AntScenario;
+import scenarios.bacteria.BacteriaScenario;
+import scenarios.capturetheflag.CTFScenario;
+import scenarios.flocking.FlockingScenario;
+import scenarios.tadpoles.TadpolesScenario;
+import scenarios.termites.TermitesScenario;
+
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
-import Ant.AntScenario;
-import Bacteria.BacteriaScenario;
-import Flocking.FlockingScenario;
-import Tadpoles.TadpolesScenario;
-import Termites.TermitesScenario;
-import capturetheflag.CTFScenario;
 
 public class MainMenuScenario extends Scenario {
 

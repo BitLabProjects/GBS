@@ -1,12 +1,14 @@
 package engine;
 
-import Bacteria.BacteriaFrame;
-import Flocking.FlockingFrame;
-import capturetheflag.CTFFrame;
-import Termites.TermitesFrame;
 import java.awt.*;
 import java.awt.event.*;
+
 import javax.swing.*;
+
+import scenarios.bacteria.BacteriaFrame;
+import scenarios.capturetheflag.CTFFrame;
+import scenarios.flocking.FlockingFrame;
+import scenarios.termites.TermitesFrame;
 
 public class Main extends JFrame implements ActionListener {
 

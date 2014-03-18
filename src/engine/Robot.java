@@ -1,7 +1,7 @@
 package engine;
 
-import Ant.Pheromone;
 import Robotpainters.RobotPainter;
+import scenarios.ant.Pheromone;
 import utils.Color;
 
 import java.util.*;

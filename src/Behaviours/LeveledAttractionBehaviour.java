@@ -1,6 +1,5 @@
 package Behaviours;
 
-import Ant.Pheromone;
 import engine.Behaviour;
 import engine.RenderContext;
 import engine.WorldObject;
@@ -8,7 +7,9 @@ import engine.WorldObject.VisiblesColorFilter;
 import engine.WorldObject.VisiblesTypeFilter;
 import engine.Robot;
 import engine.Vector;
+import scenarios.ant.Pheromone;
 import utils.Color;
+
 import java.util.ArrayList;
 
 public class LeveledAttractionBehaviour extends Behaviour {

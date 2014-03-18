@@ -4,7 +4,6 @@ import com.badlogic.gdx.graphics.Camera;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import engine.RenderContext;
 import engine.World;
-import static main.Scenario.createButton;
 
 public class WorldScenario extends Scenario {
   private World mWorld;
