@@ -4,7 +4,7 @@ package engine;
 
 public class Box extends WorldObject {
 
-  float width, height;
+  public final float width, height;
 
   public Box(World e, Vector p, float w, float h) {
     super(e, p);

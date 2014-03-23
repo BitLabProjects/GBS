@@ -21,6 +21,12 @@ public class WorldScenario extends Scenario {
             GbsApplication.getApp().setScenario(new MainMenuScenario());
           }
         }).left().top();
+    
+    createButtons(table);
+  }
+  
+  public void createButtons(Table table) {
+	  
   }
   
   @Override

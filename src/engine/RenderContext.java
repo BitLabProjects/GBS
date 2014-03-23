@@ -64,6 +64,15 @@ public class RenderContext {
     mImmediateRender.vertex(x2, y2, 0.0f);
     endRender();
   }
+  
+  public void drawLine(float x1, float y1, float x2, float y2) {
+	    beginRender(GL20.GL_LINES);
+	    setCurrentColor();
+	    mImmediateRender.vertex(x1, y1, 0.0f);
+	    setCurrentColor();
+	    mImmediateRender.vertex(x2, y2, 0.0f);
+	    endRender();
+	  }
 
   public void drawRect(int x1, int y1, int w, int h) {
     int x2 = x1 + w;

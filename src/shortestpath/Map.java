@@ -10,7 +10,7 @@ public class Map {
 	public Map(int numRow, int numCol) {
 		NumRow = numRow;
 		NumCol = numCol;
-		mMatrix = new boolean[NumRow][NumCol];
+		mMatrix = new boolean[NumCol][NumRow];
 	}
 
 	public void initRandom() {
@@ -26,11 +26,11 @@ public class Map {
 		return mMatrix[i][j];
 	}
 
-	public void addObstacle(int row, int col, int dimX, int dimY) {
-		if (row + dimY <= NumRow && col + dimX <= NumCol) {
-			for (int i = row; i < row + dimY; i++) {
-				for (int j = col; j < col + dimX; j++) {
-					mMatrix[i][j] = true;
+	public void addObstacle(int x, int y, int dimX, int dimY) {
+		if (x + dimY <= NumRow && y + dimX <= NumCol) {
+			for (int i = x; i < x + dimY; i++) {
+				for (int j = y; j < y + dimX; j++) {
+					mMatrix[j][i] = true;
 				}
 			}
 		}

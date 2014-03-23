@@ -96,7 +96,7 @@ public class World {
     }
   }
 
-  void remove(WorldObject i) {
+  public void remove(WorldObject i) {
     if (!items.remove(i)) {
       robots.remove((Robot) i);
     }

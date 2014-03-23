@@ -15,11 +15,11 @@ public class Dijkstra {
 		mStart = start;
 		mEnd = end;
 		
-		final int[] dist = new int[mMap.NumRow * mMap.NumCol]; // shortest known distance from "start"
+		final float[] dist = new float[mMap.NumRow * mMap.NumCol]; // shortest known distance from "start"
 		final int[] pred = new int[mMap.NumRow * mMap.NumCol]; // preceeding node in path
 		
 		for (int i = 0; i < dist.length; i++) {
-			dist[i] = Integer.MAX_VALUE;
+			dist[i] = Float.MAX_VALUE;
 			pred[i] = -1;
 		}
 		dist[start.Y * mMap.NumCol + start.X] = 0;
@@ -29,18 +29,20 @@ public class Dijkstra {
 			Q.add(i);
 		}
 		
+		int endCoord = end.Y * mMap.NumCol + end.X;
+		
 		while (Q.size() > 0) {
 			final int u = minVertex(Q, dist);
 			Q.remove(Q.indexOf(u));
 	        
-			if (dist[u] == Integer.MAX_VALUE) {
+			if (dist[u] == Float.MAX_VALUE) {
 	            break ;                                            // tutti i vertici rimanenti sono
 			}                                                      // inaccessibili dal nodo sorgente
 	        
 			final int[] n = getNeighbors(u);
 			for (int j = 0; j < n.length; j++) {
 				final int v = n[j];
-				final int distV = dist[u] + 1; //+ G.getWeight(next, v);
+				final float distV = dist[u] + getWeight(u, v);
 				if (dist[v] > distV) {
 					dist[v] = distV;
 					pred[v] = u;
@@ -52,7 +54,7 @@ public class Dijkstra {
 		ArrayList<Coordinates> result = new ArrayList<Coordinates>();
 		//result.add(start);
 		
-		int curr = end.Y * mMap.NumCol + end.X;
+		int curr = endCoord;
 		while (curr != -1) {
 			int x = curr % mMap.NumCol;
 			int y = (curr - x) / mMap.NumCol;
@@ -61,6 +63,18 @@ public class Dijkstra {
 		}
 		
 		return result;
+	}
+	
+	private float getWeight(int u, int v) {
+		int x1 = u % mMap.NumCol;
+		int y1 = (u - x1) / mMap.NumCol;
+		
+		int x2 = v % mMap.NumCol;
+		int y2 = (v - x2) / mMap.NumCol;
+		
+		if (x1 != x2 && y1 != y2)
+			return (float) Math.sqrt(2);
+		return 1;
 	}
 
 	private int[] getNeighbors(int next) {
@@ -87,13 +101,20 @@ public class Dijkstra {
 	private void maybeAddNeighbour(ArrayList<Integer> neighbours, int x, int y) {
 		if (x < 0 || y < 0 || x >= mMap.NumCol || y >= mMap.NumRow)
 			return;
-		if (!mMap.get(x, y))
-			neighbours.add(y * mMap.NumCol + x);
+		try {
+			if (!mMap.get(x, y))
+				neighbours.add(y * mMap.NumCol + x);			
+			
+		} catch (Exception e) {
+			System.out.println();
+		}
+
 	}
 
-	private static int minVertex(ArrayList<Integer> Q, int[] dist) {
-		int x = Integer.MAX_VALUE;
-		int y = Q.get(0); // graph not connected, or no unvisited vertices
+	private static int minVertex(ArrayList<Integer> Q, float[] dist) {
+		int y = Q.get(0);
+		float x = dist[y];
+		
 		for (int i = 1; i < Q.size(); i++) {
 			int node = Q.get(i);
 			if (dist[node] < x) {

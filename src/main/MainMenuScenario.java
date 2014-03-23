@@ -4,6 +4,7 @@ import scenarios.ant.AntScenario;
 import scenarios.bacteria.BacteriaScenario;
 import scenarios.capturetheflag.CTFScenario;
 import scenarios.flocking.FlockingScenario;
+import scenarios.linefollower.LineFollowerScenario;
 import scenarios.tadpoles.TadpolesScenario;
 import scenarios.termites.TermitesScenario;
 
@@ -59,6 +60,12 @@ public class MainMenuScenario extends Scenario {
         return new TadpolesScenario();
       }
     });
+    
+    createSetScenarioButton(table, "Line Follower", new IScenarioFactory() {
+	    public Scenario create() {
+	      return new LineFollowerScenario();
+	    }
+	  });
   }
 
   private void createSetScenarioButton(Table table, String text, final IScenarioFactory factory) {

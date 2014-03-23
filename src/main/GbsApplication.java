@@ -32,7 +32,7 @@ public class GbsApplication implements ApplicationListener {
 
   public void render() {
     float dt = Math.max(Gdx.graphics.getDeltaTime()*1, 1.0f/60.0f);
-    for(int i=0; i<100; i++) {
+    for(int i=0; i<10; i++) {
       mCurrentScenario.update(dt);
     }
     
