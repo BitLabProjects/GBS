@@ -1,7 +1,6 @@
 package library.triggers;
 
 import engine.Trigger;
-import org.simpleframework.xml.*;
 
 public class AlwaysTrigger extends Trigger {
 

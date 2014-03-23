@@ -3,6 +3,7 @@ package engine;
 import java.util.LinkedList;
 
 import library.triggeractions.ChangeStateToAction;
+import library.triggeractions.GoToTargetAction;
 import library.triggeractions.ShootAtAction;
 import library.triggeractions.WalkTowardsAction;
 import library.triggeractions.WanderAction;
@@ -15,7 +16,8 @@ public abstract class Trigger {
       @ElementList(entry="ChangeStateToAction", type=ChangeStateToAction.class, inline=true),
       @ElementList(entry="ShootAtAction", type=ShootAtAction.class, inline=true),
       @ElementList(entry="WalkTowardsAction", type=WalkTowardsAction.class, inline=true),
-      @ElementList(entry="WanderAction", type=WanderAction.class, inline=true)
+      @ElementList(entry="WanderAction", type=WanderAction.class, inline=true),
+      @ElementList(entry="GoToTargetAction", type=GoToTargetAction.class, inline=true)
    })
   private LinkedList<TriggerAction> mActions;
   private Core mCore;

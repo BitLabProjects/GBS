@@ -1,6 +1,7 @@
 package main;
 
 import com.badlogic.gdx.*;
+import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.graphics.*;
 
 public class GbsApplication implements ApplicationListener {
@@ -32,7 +33,10 @@ public class GbsApplication implements ApplicationListener {
 
   public void render() {
     float dt = Math.max(Gdx.graphics.getDeltaTime()*1, 1.0f/60.0f);
-    for(int i=0; i<10; i++) {
+    
+    int repeats = Gdx.input.isKeyPressed(Keys.SPACE) ? 100 : 10;
+           
+    for(int i=0; i<repeats; i++) {
       mCurrentScenario.update(dt);
     }
     

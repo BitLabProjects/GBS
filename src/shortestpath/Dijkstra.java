@@ -35,7 +35,7 @@ public class Dijkstra {
 			final int u = minVertex(Q, dist);
 			Q.remove(Q.indexOf(u));
 	        
-			if (dist[u] == Float.MAX_VALUE) {
+			if (dist[u] == Float.MAX_VALUE || u == endCoord) {
 	            break ;                                            // tutti i vertici rimanenti sono
 			}                                                      // inaccessibili dal nodo sorgente
 	        

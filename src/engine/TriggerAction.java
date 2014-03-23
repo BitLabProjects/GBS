@@ -1,5 +1,8 @@
 package engine;
 
+import org.simpleframework.xml.Root;
+
+@Root
 public abstract class TriggerAction {
   protected Core mCore;
   public void setCore(Core core) {
