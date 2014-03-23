@@ -17,7 +17,7 @@ import shortestpath.Map;
 public class GoToTargetAction extends TriggerAction {
 
 	private final int mScale = 10;
-	private ArrayList<Coordinates> mPath;
+	private ArrayList<Vector> mPath;
 	private int mCurrentPathPoint;
 	
 	public GoToTargetAction() {
@@ -30,20 +30,15 @@ public class GoToTargetAction extends TriggerAction {
 			createPath();
 		
 		Robot mRobot = mCore.getRobot();
-		//Se non sono ancora arrivato al punto mPath[mCurrentPathPoint]
-		//  Vai verso quel punto
-		//Altrimenti
-		//  Passa al prossimo punto
 		
-		Vector currentPathPoint = new Vector(mPath.get(mCurrentPathPoint).X * mScale + mScale / 2,
-				                             mPath.get(mCurrentPathPoint).Y * mScale + mScale / 2);
+		Vector currentPathPoint = mPath.get(mCurrentPathPoint).getCopy();
 		Vector posToDistance = currentPathPoint.getCopy();
 		posToDistance.sub(mRobot.getPosition());
 		if (posToDistance.getLength() > 5) {
 			posToDistance.setLength(3);
 			mRobot.setVelocity(posToDistance);
 		}
-		else {
+		else { 
 			mCurrentPathPoint += 1;
 		}
 	}
@@ -68,8 +63,11 @@ public class GoToTargetAction extends TriggerAction {
 		}
 
 		Dijkstra d = new Dijkstra(map);
-		mPath = d.getPath(new Coordinates(0, 0), 
-		                  new Coordinates(map.NumCol - 1, map.NumRow - 1));
+		ArrayList<Coordinates> pathInMap = d.getPath(new Coordinates(0, 0), 
+		                                             new Coordinates(map.NumCol - 1, map.NumRow - 1));
+		
+		mPath = map.getPathInWorld(pathInMap, mScale);
+		
 		PathWorldObject pwo = new PathWorldObject(world, new Vector(0, 0), map, mPath);
 
 		world.addItem(pwo);
@@ -77,8 +75,7 @@ public class GoToTargetAction extends TriggerAction {
 		
 		//Megatrucco
 		Robot mRobot = mCore.getRobot();
-		mRobot.setPosition(new Vector(mPath.get(mCurrentPathPoint).X * mScale + mScale / 2,
-				                      mPath.get(mCurrentPathPoint).Y * mScale + mScale / 2));
+		mRobot.setPosition(mPath.get(mCurrentPathPoint).getCopy());
 	}
 
 	@Override

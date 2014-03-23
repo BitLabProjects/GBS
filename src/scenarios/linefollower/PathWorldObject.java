@@ -11,10 +11,10 @@ import engine.World;
 import engine.WorldObject;
 
 public class PathWorldObject extends WorldObject {
-	private List<Coordinates> mPath;
+	private List<Vector> mPath;
 	private Map mMap;
 	
-	public PathWorldObject(World e, Vector p, Map map, List<Coordinates> path) {
+	public PathWorldObject(World e, Vector p, Map map, List<Vector> path) {
 		super(e, p);
 		mPath = path;
 		mMap = map;
@@ -43,15 +43,9 @@ public class PathWorldObject extends WorldObject {
 		}
 		
 		g.setColor(getColor());
-		
-		g.push();
-		g.translate(scale/2, scale/2);
-		g.scale(scale, scale);
 		for(int i = 0; i < mPath.size() - 1; i++) {
-			g.drawLine(mPath.get(i).X, mPath.get(i).Y, 
-					   mPath.get(i + 1).X, mPath.get(i + 1).Y);
+			g.drawLine(mPath.get(i).x, mPath.get(i).y, 
+					   mPath.get(i + 1).x, mPath.get(i + 1).y);
 		}
-		g.pop();
-
 	}
 }

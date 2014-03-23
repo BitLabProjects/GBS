@@ -3,6 +3,8 @@ package shortestpath;
 import java.util.ArrayList;
 import java.util.Random;
 
+import engine.Vector;
+
 public class Map {
 	private boolean mMatrix[][];
 	public final int NumRow, NumCol;
@@ -57,5 +59,14 @@ public class Map {
 			}
 			System.out.println("");
 		}
+	}
+
+	public ArrayList<Vector> getPathInWorld(ArrayList<Coordinates> pathInMap, int scale) {
+		ArrayList<Vector> result = new ArrayList<Vector>();
+		for (Coordinates coord : pathInMap) {
+			result.add(new Vector(coord.X * scale + scale / 2,
+					              coord.Y * scale + scale / 2));
+		}
+		return result;
 	}
 }

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Core Name="LineFollower">
-  <State Name="FollowLine">
+  <State Name="GoToTarget">
     <AlwaysTrigger>
       <GoToTargetAction />
     </AlwaysTrigger>
-  </State>
+          </State>
 </Core>

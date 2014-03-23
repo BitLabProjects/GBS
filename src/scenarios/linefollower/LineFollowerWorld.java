@@ -12,10 +12,33 @@ import engine.robotpainters.TadpolePainter;
 
 import java.util.Random;
 
-import shortestpath.*;
-
 public class LineFollowerWorld extends World {
 
+	
+	/*
+	 * 
+	 * 
+<?xml version="1.0" encoding="UTF-8"?>
+<Core Name="LineFollower">
+  <State Name="SearchTarget">
+    <AlwaysTrigger>
+      <SetRandomTargetAction Variable="@myTarget" />
+      <ChangeStateToAction State="GoToTarget" />
+    </AlwaysTrigger>
+  </State>
+  <State Name="GoToTarget">
+    <AlwaysTrigger>
+      <GoToTargetAction Target="@myTarget" />
+    </AlwaysTrigger>
+    <TargetReached>
+      <ChangeStateToAction State="SearchTarget" />
+    </TargetReached>
+  </State>
+</Core>
+	 * 
+	 * 
+	 */
+	
 	private static final TadpolePainter tp = new TadpolePainter();
 
 	public LineFollowerWorld(int width, int height) {
@@ -45,8 +68,6 @@ public class LineFollowerWorld extends World {
 
 		// world.addBorderBoxes();
 
-		// createPath();
-
 		// Crea i robot dei tre colori
 		for (int i = 0; i < 1; i++) {
 			Robot r = new Robot(world, new Vector(randGen.nextFloat()
@@ -59,31 +80,4 @@ public class LineFollowerWorld extends World {
 			world.addRobot(r);
 		}
 	}
-
-	// public void createPath() {
-	// final int scale = 10;
-	// Map map = new Map(getHeight() / scale, getWidth() / scale);
-	//
-	// for (WorldObject o : getItems()) {
-	// if (o instanceof Box) {
-	// Box b = (Box) o;
-	// int rY = (int) ((b.getPosition().y - (b.height / 2)) / scale);
-	// int rX = (int) ((b.getPosition().x - (b.width / 2)) / scale);
-	// int rW = (int) Math.ceil((b.getPosition().x + b.width / 2 - rX
-	// * scale)
-	// / scale);
-	// int rH = (int) Math.ceil((b.getPosition().y + b.height / 2 - rY
-	// * scale)
-	// / scale);
-	// map.addObstacle(rY, rX, rW, rH);
-	// }
-	// }
-	//
-	// Dijkstra d = new Dijkstra(map);
-	// PathWorldObject path = new PathWorldObject(this, new Vector(0, 0), map,
-	// d.getPath(new Coordinates(0, 0), new Coordinates(
-	// map.NumCol - 1, map.NumRow - 1)));
-	//
-	// addItem(path);
-	// }
 }
